@@ -18,6 +18,13 @@ class ConversationsController < ApplicationController
     @reciever = interlocutor(@conversation)
     @messages = @conversation.messages
     @message = Message.new
+    if @messages.last
+      if @messages.last.user_id != current_user.id
+        @messages.each do |message|
+          message.update(read: true)
+        end
+      end
+    end
   end
 
   private

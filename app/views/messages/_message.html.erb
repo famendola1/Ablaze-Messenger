@@ -6,7 +6,13 @@
   <div class="chatboxmessagecontent">
     <p><%= message.body %></p>
     <time datetime="<%= message.created_at %>" title="<%= message.created_at.strftime("%d %b  %Y at %I:%M%p") %>">
-      <%= message_interlocutor(message).name %> • <%= message.created_at.strftime("%H:%M %p") %>
+      <%= message_interlocutor(message).name %> • <%= message.created_at.strftime("%H:%M %p") %> 
+    <% if not message.read and message.user_id == current_user.id%>
+        • <b>Not Read</b>
+    <% elsif message.read and message.user_id == current_user.id%>
+        • Read
+    <% end %>
     </time>
+
   </div>
 </li>
