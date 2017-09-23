@@ -13,4 +13,13 @@
         chatbox.scrollTop(chatbox[0].scrollHeight);
         chatBox.notify();
     }
+
+function truncate(str, num) {
+    if (num < str.length) {
+        str.slice(num);
+        return str + "..."
+    }
+    return str
+}
+$(".media-body[data-cid=" + id + "] p").text(truncate("<%= @message.body %>", 45));
 <% end %>

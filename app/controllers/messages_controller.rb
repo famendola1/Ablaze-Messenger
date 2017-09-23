@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
     @message.user_id = current_user.id
     @message.save!
 
+    @conversation.update(updated_at: Time.now.getutc)
     @path = conversation_path(@conversation)
   end
 

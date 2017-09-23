@@ -24,7 +24,7 @@ var ready = function () {
 
         chatWith: function (conversation_id) {
 
-            chatBox.createChatBox(conversation_id);
+            chatBox.createChatBox(conversation_id, 1);
             $("#chatbox_" + conversation_id + " .chatboxtextarea").focus();
         },
 

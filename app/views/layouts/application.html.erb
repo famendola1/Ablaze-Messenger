@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
-    <title>Ablaze Messenger</title>
+    <title>Random Messenger</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -28,5 +28,6 @@
 
   <%= yield %>
 </div>
+<audio id="chatAudio"><source src="<%= asset_path('message.mp3')%>" type="audio/mpeg"></audio>
   </body>
 </html>
