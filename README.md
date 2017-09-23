@@ -44,3 +44,29 @@ To send a message click the big green button and a chat box will appear to messa
 All your conversations appear on the main page and clicking on the conversation will open a chat box showing the messages between you and that user.
 
 ![](convo.png)
+
+## Architecture
+### User
+I used a ruby gem called [devise](https://github.com/plataformatec/devise) to handle the user data. The user data is collected through a form on the sign up page. The data is then stored in the database with columns that are predefined by devise. I added two columns to the database, name and color, to store the values that were given in the form since they weren't predefined by devise. A user also has a has_many relationship with conversations.
+
+### Messages
+Messages are created when the user submit's the form in the chat box, which is just the text area at the bottom. Messages are stored in the database with the following columns:
+
+* body, text of message
+* conversation_id (belongs_to relationship)
+* user_id (belongs_to relationship)
+* created_at, time message was created
+* updated_at, time message was created
+* read, if meassage was read or not
+
+Mesages also validate the presence of a body, conversation_id, and user_id (i.e. A message existing means that it's body, conversation_id, and user_id also exist).
+
+### Conversations
+Conversations are created when the user clicks the send message button. Conversations are stored in the database with the following columns:
+
+* sender_id (belongs_to relationship), first person to send message in conversation
+* recipient_id (belongs_to relationship), person who receives the message first in the conversation
+* created_at, time conversation was created
+* updated_at, time conversation was updated
+
+Conversations have a has_many relationship with messages and they validate the uniqueness of sender_id within the scope of the recipient (i.e. each conversation where the user is a recipient has a unique sender_id).
