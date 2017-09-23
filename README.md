@@ -1,5 +1,8 @@
 # Random Messenger
 
+## Description
+Are you tired of your messaging apps having all these fancy features and options, and just want get back to classic messaging? Do you want to expand your social network and connect with people from all over the world? Well, Random Messenger is the messenger app for you. Random Messenger allows user to chat with random strangers with just the click of a button. The simple interface removes all the distracting options like images, documents, emoji's, stickers, etc. and is strickly only text. This way there is no need to decipher a sequence of emojis or accidentally sending a random sticker. This app is also semi-anonymous, as your username could be whatever you want (i.e. your actual name or a screenname), but profile pictures are replaced with a box filled with the color of your choice.
+
 ## Requirements
 
 * [Ruby 2.3+](https://www.ruby-lang.org/en/)
@@ -20,6 +23,6 @@ You can login by entering the email and password you created the account with or
 ### Logout
 Click the logout link to logout. You will see a confirmation on the page that you logged out.
 ### Send Message
-To send a message click the big green button and a chat box will appear to message a randomly selected user that isn't you. If the database isn't seeded you will not be able to send a message becaus ehtere won't be any other users.
+To send a message click the big green button and a chat box will appear to message a randomly selected user that isn't you. If the database isn't seeded you will not be able to send a message because htere won't be any other users.
 ### Conversations
 All your conversations appear on the main page and clicking on the conversation will open a chat box showing the messages between you and that user 
