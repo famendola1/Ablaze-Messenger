@@ -82,4 +82,4 @@ Conversations have a has_many relationship with messages and they validate the u
  
  ## References
  * Extended messaging logic from this tutorial: http://josephndungu.com/tutorials/gmail-like-chat-application-in-ruby-on-rails
- * Styling and javascript logic used from: anantgarg.com/2009/05/13/gmail-facebook-style-jquery-chat
+ * Styling and javascript logic used from: http://anantgarg.com/2009/05/13/gmail-facebook-style-jquery-chat
