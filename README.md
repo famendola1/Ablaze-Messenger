@@ -70,3 +70,16 @@ Conversations are created when the user clicks the send message button. Conversa
 * updated_at, time conversation was updated
 
 Conversations have a has_many relationship with messages and they validate the uniqueness of sender_id within the scope of the recipient (i.e. each conversation where the user is a recipient has a unique sender_id).
+
+## Known Issues
+* Chat boxes don't resize when there are too many to fit on the screen
+    - I considered making the chat box sizes dynamic, but if there are too many chat boxes open then each one would be too         small. Currently, at full screen, five chat boxes can be open without this issue. My assumption is that the user is           unlikely to need all five open at once and would be able to close some if this issue arises.
+* New conversations don't appear on page when you send the first message without reloading
+    - I figure that this isn't a problem for the person sending the first message since the chat box will already be open.         The receiver of the first message will not see the new conversation without a refresh.
+* User only sees new message when chat box is open without refreshing
+    - If a chat box is not open when the user receives a message, they don't know they have a new message without refreshing.       A fix I considered was a notification system for messages or simply updating the conversation on the main page to show       a new message
+ 
+ 
+ ## References
+ * Extended messaging logic from this tutorial: http://josephndungu.com/tutorials/gmail-like-chat-application-in-ruby-on-rails
+ * Styling and javascript logic used from: anantgarg.com/2009/05/13/gmail-facebook-style-jquery-chat
